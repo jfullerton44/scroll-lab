@@ -5,13 +5,15 @@
 import React, {Component} from 'react';
 import {Text, Image, TouchableHighlight, TouchableOpacity, StyleSheet, View} from 'react-native';
 import dude from '../assets/boy.png';
+import moment from 'moment';
 
 
 export default class Card extends Component {
   constructor(props) {
     super(props);
+    dateDisplay = moment(this.props.date).format('dddd, MMMM Do YYYY');
+    timeDisplay = moment(this.props.date).format('h:mm:ss a');
   }
-
 
   render() {
     return (
@@ -26,8 +28,10 @@ export default class Card extends Component {
           </View>
           <View style={styles.TopText}>
             <Text style={styles.nameText}>{this.props.name}</Text>
-            <Text style={styles.dateText}>{this.props.date}</Text>
-            <Text style={styles.dateText}>ID: {this.props.id}</Text>
+            {/* <Text style={styles.dateText}>{this.props.date}</Text> */}
+            <Text style={styles.dateText}>{moment(this.props.date).format('dddd, MMMM Do YYYY')}</Text>
+            <Text style={styles.dateText}>{moment(this.props.date).format('h:mm:ss a')}</Text>
+            {/* <Text style={styles.dateText}>ID: {this.props.id}</Text> */}
           </View>
         </View>
         <View style={styles.buttonContainer}>
@@ -101,6 +105,7 @@ const styles = {
   TopText: {
     alignSelf: 'center',
     justifyContent: 'center',
+    paddingTop: 20,
   },
   button: {
     height: 51,
