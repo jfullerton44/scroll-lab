@@ -27,13 +27,20 @@ export default class Card extends Component {
           <View style={styles.TopText}>
             <Text style={styles.nameText}>{this.props.name}</Text>
             <Text style={styles.dateText}>{this.props.date}</Text>
+            <Text style={styles.dateText}>ID: {this.props.id}</Text>
           </View>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress = {() => this.props.onClickDec(this.props.id)}
+          >
             <Text style={{color: 'red', justifyContent: 'center', alignSelf: 'center'}}>Decline</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress = {() => this.props.onClickAcc(this.props.id)}
+          >
             <Text style={{color: 'green', justifyContent: 'center', alignSelf: 'center'}}>Accept</Text>
           </TouchableOpacity>
         </View>
@@ -76,6 +83,7 @@ const styles = {
   nameText: {
     fontSize: 14,
     color: 'black',
+    paddingTop: 10,
   },
   dateText: {
     fontSize: 14,
