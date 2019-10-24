@@ -3,10 +3,9 @@
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 import React, {Component} from 'react';
-import {Text, Image, TouchableHighlight, TouchableOpacity, StyleSheet, View} from 'react-native';
+import {Text, Image, TouchableHighlight, TouchableOpacity, StyleSheet, View, Button} from 'react-native';
 import dude from '../assets/boy.png';
 import moment from 'moment';
-
 
 
 export default class Card extends Component {
@@ -17,36 +16,12 @@ export default class Card extends Component {
   render() {
     return (
       <View style={styles.containerStyle}>
-        <View style={styles.topContainer}>
-          <View style={styles.image}>
-            {this.props.picture ? (
-            <Image style={styles.profileImg} source={{uri: this.props.picture}} />
-          ) : (
-              <Image source={dude} />
-            )}
-          </View>
-          <View style={styles.TopText}>
-            <Text style={styles.nameText}>{this.props.name}</Text>
-            {/* <Text style={styles.dateText}>{this.props.date}</Text> */}
-            <Text style={styles.dateText}>{moment(this.props.date).format('dddd, MMMM Do YYYY')}</Text>
-            <Text style={styles.dateText}>{moment(this.props.date).format('h:mm:ss a')}</Text>
-            {/* <Text style={styles.dateText}>ID: {this.props.id}</Text> */}
-          </View>
+        <View>
+          <Button
+            title = "Create New Event"
+            style = {alignSelf='center'}
+          />
         </View>
-        {/* <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress = {() => this.props.onClickDec(this.props.id)}
-          >
-            <Text style={{color: 'red', justifyContent: 'center', alignSelf: 'center'}}>Decline</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button}
-            onPress = {() => this.props.onClickAcc(this.props.id)}
-          >
-            <Text style={{color: 'green', justifyContent: 'center', alignSelf: 'center'}}>Accept</Text>
-          </TouchableOpacity>
-        </View> */}
       </View>
     );
   }
@@ -65,9 +40,10 @@ const styles = {
     shadowRadius: 2,
     elevation: 1,
     marginLeft: 5,
+    paddingleft: 10,
     marginRight: 5,
-    marginTop: 10,
-    height: 133,
+    //marginTop: 10,
+    height: 50,
     width: 315,
     backgroundColor: '#FFFFFF',
   },

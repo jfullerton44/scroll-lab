@@ -6,6 +6,7 @@ import React, {Component, useState} from 'react';
 import {Easing, Text, Image, Animated, TouchableOpacity, StyleSheet, View, ScrollView, TouchableHighlight} from 'react-native';
 import InviteCard from './InviteCard';
 import EventCard from './EventCard';
+import CreateNew from './makeNewEvent';
 import moment from 'moment';
 import {FlatList} from 'react-native-gesture-handler';
 
@@ -97,6 +98,8 @@ function HomeScreen() {
                   return <EventCard key={person.id} id={person.id} name={person.name} date={person.date} onClickAcc={doNothing} onClickDec={doNothing} />;
                 }
               }),
+              <CreateNew key={day+50} style={paddingLeft= 50}></CreateNew>,
+
             ]);
           })}
           {/* <ScrollView style={styles.bottomScroll}>
@@ -125,6 +128,7 @@ const styles = StyleSheet.create(
         flex: 1,
         flexDirection: 'column',
         alignSelf: 'center',
+        padding: 5,
       },
     });
 
