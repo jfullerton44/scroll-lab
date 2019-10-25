@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import Constants from 'expo-constants';
 import HomeScreen from './components/HomeScreen';
-import { Card } from 'react-native-paper';
 
 
 export default function App() {
