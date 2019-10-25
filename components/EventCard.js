@@ -94,8 +94,8 @@ const styles = {
   },
   profileImg: {
     padding: 10,
-    height: 80,
-    width: 80,
+    height: 60,
+    width: 60,
     borderRadius: 40,
   },
   image: {
